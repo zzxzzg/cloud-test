@@ -1,7 +1,11 @@
+ARG APPLICATION_NAME
 FROM openjdk:8-jre
-MAINTAINER Mr.王
+MAINTAINER 离冬
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
-WORKDIR /
-COPY target/provider1-0.0.1-SNAPSHOT.jar /
+WORKDIR /utils
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.2.3-linux-x86_64.tar.gz
+RUN tar xzvf filebeat-8.2.3-linux-x86_64.tar.gz
+
+COPY target/provider1-0.0.1-SNAPSHOT.jar /${APPLICATION_NAME}
 EXPOSE 8072
-CMD java -jar provider1-0.0.1-SNAPSHOT.jar
+CMD java -jar /${APPLICATION_NAME}/provider1-0.0.1-SNAPSHOT.jar

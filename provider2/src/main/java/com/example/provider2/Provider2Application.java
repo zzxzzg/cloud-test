@@ -1,17 +1,15 @@
-package com.example.consumer1;
+package com.example.provider2;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableDiscoveryClient
-@EnableDubbo
-public class Consumer1Application {
+@EnableDubbo(scanBasePackages = "com.example.provider2")
+public class Provider2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Consumer1Application.class, args);
+        SpringApplication.run(Provider2Application.class, args);
     }
 
 }

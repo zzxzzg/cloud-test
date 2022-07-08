@@ -17,6 +17,8 @@
     <description>cloud-test</description>
     <properties>
         <java.version>1.8</java.version>
+        <dubbo.version>3.0.8</dubbo.version>
+        <nacos.client.version>2.1.0</nacos.client.version>
     </properties>
 
     <modules>
@@ -24,6 +26,7 @@
         <module>consumer1</module>
         <module>gateway</module>
         <module>helloworld</module>
+        <module>export</module>
     </modules>
 
     <dependencyManagement>
@@ -41,6 +44,56 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
                 <version>2.2.5.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos.client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-config</artifactId>
+                <version>${nacos.client.version}</version>
+            </dependency>
+
+            <!-- Slf4j 依赖 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.36</version>
+            </dependency>
+            <!-- logback 依赖 -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.2.11</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>8.2.0</version>
+            </dependency>
+
+            <!--sentinel 组件 -->
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-transport-simple-http</artifactId>
+                <version>1.7.1</version>
             </dependency>
 
         </dependencies>

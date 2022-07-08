@@ -8,32 +8,30 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
-
-    <artifactId>provider1</artifactId>
+    <artifactId>provider2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>provider1</name>
-    <description>provider1</description>
+    <name>provider2</name>
+    <description>provider2</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
     <dependencies>
+
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>export</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        <!--nacos 配置 https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-
-        <!--nacos 服务发现 https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
         <dependency>
@@ -57,21 +55,27 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
 
+        <!--dubbo依赖-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.70</version>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.skywalking</groupId>
-            <artifactId>apm-toolkit-trace</artifactId>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
 
+        <!--nacos 配置 https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html-->
         <dependency>
-            <groupId>com.guardz</groupId>
-            <artifactId>guardz-nacos-config-spring</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <!--nacos 服务发现 https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
         <dependency>
@@ -83,7 +87,6 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
